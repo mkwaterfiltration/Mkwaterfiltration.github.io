@@ -1,103 +1,96 @@
-document.addEventListener('DOMContentLoaded', function() {
-            // ===== THEME TOGGLE LOGIC (FIXED) =====
-            const themeToggleBtn = document.getElementById('theme-toggle');
-            const lightIcon = document.getElementById('theme-toggle-light-icon');
-            const darkIcon = document.getElementById('theme-toggle-dark-icon');
-            const htmlEl = document.documentElement;
+<script>
+    // ===== LANGUAGE DATA =====
+    const translations = { /* ... keep your translations ... */ };
 
-            function updateThemeIcons(isDark) {
-                if (isDark) {
-                    darkIcon.classList.remove('hidden');
-                    lightIcon.classList.add('hidden');
-                } else {
-                    lightIcon.classList.remove('hidden');
-                    darkIcon.classList.add('hidden');
-                }
+    document.addEventListener('DOMContentLoaded', function() {
+        // ===== THEME TOGGLE LOGIC (FIXED) =====
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const htmlEl = document.documentElement;
+
+        function updateThemeIcons(isDark) {
+            // In dark mode: show light (sun) icon, hide dark (moon) icon
+            if (isDark) {
+                lightIcon.classList.remove('hidden');
+                darkIcon.classList.add('hidden');
+            } else {
+                lightIcon.classList.add('hidden');
+                darkIcon.classList.remove('hidden');
             }
-            function getPreferredTheme() {
-                if (localStorage.getItem('theme') === 'dark') return 'dark';
-                if (localStorage.getItem('theme') === 'light') return 'light';
-                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        function getPreferredTheme() {
+            if (localStorage.getItem('theme') === 'dark') return 'dark';
+            if (localStorage.getItem('theme') === 'light') return 'light';
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                htmlEl.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                updateThemeIcons(true);
+            } else {
+                htmlEl.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                updateThemeIcons(false);
             }
-            function setTheme(theme) {
-                if (theme === 'dark') {
-                    htmlEl.classList.add('dark');
-                    localStorage.setItem('theme', 'dark');
-                    updateThemeIcons(true);
-                } else {
-                    htmlEl.classList.remove('dark');
-                    localStorage.setItem('theme', 'light');
-                    updateThemeIcons(false);
-                }
-            }
-            // Set initial theme
-            setTheme(getPreferredTheme());
-            // Toggle on button click
-            themeToggleBtn.addEventListener('click', function () {
-                const isDark = htmlEl.classList.contains('dark');
-                setTheme(isDark ? 'light' : 'dark');
-            });
-
-            // ===== MOBILE MENU TOGGLE =====
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            // Close mobile menu when a link is clicked
-            mobileMenu.addEventListener('click', (e) => {
-                if(e.target.tagName === 'A') {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-
-            // ===== ACTIVE NAV LINK ON SCROLL =====
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('header nav a');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(link => {
-                            link.classList.remove('nav-link-active');
-                            if (link.getAttribute('href').substring(1) === entry.target.id) {
-                                link.classList.add('nav-link-active');
-                            }
-                        });
-                    }
-                });
-            }, { rootMargin: '-30% 0px -70% 0px' });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-            
-            // ===== LANGUAGE SWITCHER LOGIC =====
-            const languageSwitcher = document.getElementById('language-switcher');
-            const translatableElements = document.querySelectorAll('[data-lang-key]');
-
-            const setLanguage = (lang) => {
-                translatableElements.forEach(el => {
-                    const key = el.getAttribute('data-lang-key');
-                    if (translations[lang] && translations[lang][key]) {
-                        el.innerHTML = translations[lang][key];
-                    }
-                });
-                document.documentElement.lang = lang;
-                localStorage.setItem('language', lang);
-            };
-
-            languageSwitcher.addEventListener('change', (e) => {
-                setLanguage(e.target.value);
-            });
-
-            // Set initial language from localStorage or default to 'en'
-            const savedLang = localStorage.getItem('language') || 'en';
-            languageSwitcher.value = savedLang;
-            setLanguage(savedLang);
-            
-            // ===== FOOTER YEAR =====
-            document.getElementById('footer-year').textContent = new Date().getFullYear();
+        }
+        // Set initial theme & icon
+        setTheme(getPreferredTheme());
+        // Toggle on button click
+        themeToggleBtn.addEventListener('click', function () {
+            const isDark = htmlEl.classList.contains('dark');
+            setTheme(isDark ? 'light' : 'dark');
         });
+
+        // ===== MOBILE MENU TOGGLE =====
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.addEventListener('click', (e) => {
+            if(e.target.tagName === 'A') {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // ===== ACTIVE NAV LINK ON SCROLL =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('header nav a');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('nav-link-active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('nav-link-active');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-30% 0px -70% 0px' });
+        sections.forEach(section => observer.observe(section));
         
-        ...
+        // ===== LANGUAGE SWITCHER LOGIC =====
+        const languageSwitcher = document.getElementById('language-switcher');
+        const translatableElements = document.querySelectorAll('[data-lang-key]');
+        const setLanguage = (lang) => {
+            translatableElements.forEach(el => {
+                const key = el.getAttribute('data-lang-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+            localStorage.setItem('language', lang);
+        };
+        languageSwitcher.addEventListener('change', (e) => setLanguage(e.target.value));
+        const savedLang = localStorage.getItem('language') || 'en';
+        languageSwitcher.value = savedLang;
+        setLanguage(savedLang);
+        
+        // ===== FOOTER YEAR =====
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    });
+</script>
