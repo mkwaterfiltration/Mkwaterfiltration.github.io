@@ -41,27 +41,35 @@
         * {
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
-        /* Testimonial scroll animation */
-        .testimonial-ribbon-container {
+        .ribbon-container {
             overflow: hidden;
             width: 100%;
         }
         .testimonial-ribbon {
             display: flex;
-            width: 200%; /* Double the width to accommodate two sets of testimonials */
-            animation: scroll 40s linear infinite;
+            width: 200%; 
+            animation: scroll-testimonials 40s linear infinite;
         }
         .testimonial-card {
             flex-shrink: 0;
-            width: calc(100% / 7); /* Adjust based on the number of testimonials */
+            width: calc(100% / 7);
         }
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%); /* Scroll one full set of testimonials */
-            }
+        @keyframes scroll-testimonials {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .gallery-ribbon {
+            display: flex;
+            width: calc(20 * 320px); /* 20 images * width of each image card */
+            animation: scroll-gallery 60s linear infinite;
+        }
+        .gallery-card {
+            flex-shrink: 0;
+            width: 320px; /* Fixed width for each image card */
+        }
+        @keyframes scroll-gallery {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-20 * 320px)); } /* Scroll one full set of images */
         }
     </style>
 </head>
