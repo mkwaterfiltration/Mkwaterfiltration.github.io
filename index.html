@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://github.com/mkwaterfiltration/Mkwaterfiltration.github.io/blob/27928f775d74d44787eaf6e8ca3887657175ee90/images/logo.png?raw=true" type="image/png">
     <title>M K WATER FILTRATION - Pure Water Solutions in Central India</title>
     <meta name="description" content="Leading service provider for STP, ETP, WTP, RO plants, and all water treatment solutions in Bhopal, Madhya Pradesh.">
     
@@ -15,50 +15,80 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Custom Styles -->
+    <!-- Custom Styles & Color Palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-primary': '#55C3C2',
+                        'brand-secondary': '#9BD325',
+                        'brand-accent': '#8CCD14',
+                        'brand-light-bg': '#EDF9F0',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
             font-family: 'Poppins', sans-serif;
         }
         .nav-link-active {
-            color: #007BFF;
+            color: #55C3C2;
             font-weight: 600;
-        }
-        .dark .nav-link-active {
-            color: #38bdf8;
         }
         * {
             transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
+        /* Testimonial scroll animation */
+        .testimonial-ribbon-container {
+            overflow: hidden;
+            width: 100%;
+        }
+        .testimonial-ribbon {
+            display: flex;
+            width: 200%; /* Double the width to accommodate two sets of testimonials */
+            animation: scroll 40s linear infinite;
+        }
+        .testimonial-card {
+            flex-shrink: 0;
+            width: calc(100% / 7); /* Adjust based on the number of testimonials */
+        }
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%); /* Scroll one full set of testimonials */
+            }
+        }
     </style>
 </head>
-<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+<body class="bg-white text-gray-800">
 
     <!-- ===== HEADER / NAVIGATION ===== -->
-    <header id="header" class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-md">
+    <header id="header" class="bg-white/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Logo -->
-            <a href="#home" class="flex items-center space-x-2 text-xl md:text-2xl font-bold text-blue-600 dark:text-blue-400">
-                <img src="images/logo.png" alt="MK Water Filtration Logo" class="h-10">
-                <span>MK WATER</span>
+            <a href="#home" class="flex items-center space-x-2 text-lg md:text-xl font-bold text-brand-primary">
+                <img src="https://github.com/mkwaterfiltration/Mkwaterfiltration.github.io/blob/27928f775d74d44787eaf6e8ca3887657175ee90/images/logo.png?raw=true" alt="MK Water Filtration Logo" class="h-10">
+                <span>MK WATER FILTRATION</span>
             </a>
             
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="nav-link hover:text-blue-600" data-lang-key="nav_home">Home</a>
-                <a href="#about" class="nav-link hover:text-blue-600" data-lang-key="nav_about">About</a>
-                <a href="#products" class="nav-link hover:text-blue-600" data-lang-key="nav_products">Products</a>
-                <a href="#services" class="nav-link hover:text-blue-600" data-lang-key="nav_services">Services</a>
-                <a href="#contact" class="nav-link hover:text-blue-600" data-lang-key="nav_contact">Contact</a>
+                <a href="#home" class="nav-link hover:text-brand-primary" data-lang-key="nav_home">Home</a>
+                <a href="#about" class="nav-link hover:text-brand-primary" data-lang-key="nav_about">About</a>
+                <a href="#industries" class="nav-link hover:text-brand-primary" data-lang-key="nav_industries">Industries</a>
+                <a href="#products" class="nav-link hover:text-brand-primary" data-lang-key="nav_products">Products</a>
+                <a href="#services" class="nav-link hover:text-brand-primary" data-lang-key="nav_services">Services</a>
+                <a href="#contact" class="nav-link hover:text-brand-primary" data-lang-key="nav_contact">Contact</a>
             </nav>
 
-            <!-- Language & Theme Toggles -->
+            <!-- Language Toggle -->
             <div class="flex items-center space-x-4">
-                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 5.05A1 1 0 003.636 6.464l.707.707a1 1 0 001.414-1.414l-.707-.707zM3 11a1 1 0 100-2H2a1 1 0 100 2h1zm7.536 2.464a1 1 0 01-1.414 0l-.707-.707a1 1 0 011.414-1.414l.707.707a1 1 0 010 1.414z"></path></svg>
-                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                </button>
-                <select id="language-switcher" class="bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md py-1 px-2 text-sm">
+                <select id="language-switcher" class="bg-gray-100 border border-gray-300 rounded-md py-1 px-2 text-sm">
                     <option value="en">English</option>
                     <option value="hi">हिंदी</option>
                 </select>
@@ -73,12 +103,13 @@
         </div>
         
         <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900">
-            <a href="#home" class="block py-2 px-6 text-sm hover:bg-gray-100 dark:hover:bg-gray-800" data-lang-key="nav_home_mobile">Home</a>
-            <a href="#about" class="block py-2 px-6 text-sm hover:bg-gray-100 dark:hover:bg-gray-800" data-lang-key="nav_about_mobile">About</a>
-            <a href="#products" class="block py-2 px-6 text-sm hover:bg-gray-100 dark:hover:bg-gray-800" data-lang-key="nav_products_mobile">Products</a>
-            <a href="#services" class="block py-2 px-6 text-sm hover:bg-gray-100 dark:hover:bg-gray-800" data-lang-key="nav_services_mobile">Services</a>
-            <a href="#contact" class="block py-2 px-6 text-sm hover:bg-gray-100 dark:hover:bg-gray-800" data-lang-key="nav_contact_mobile">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-sm">
+            <a href="#home" class="block py-2 px-6 text-sm hover:bg-gray-100/50" data-lang-key="nav_home_mobile">Home</a>
+            <a href="#about" class="block py-2 px-6 text-sm hover:bg-gray-100/50" data-lang-key="nav_about_mobile">About</a>
+            <a href="#industries" class="block py-2 px-6 text-sm hover:bg-gray-100/50" data-lang-key="nav_industries_mobile">Industries</a>
+            <a href="#products" class="block py-2 px-6 text-sm hover:bg-gray-100/50" data-lang-key="nav_products_mobile">Products</a>
+            <a href="#services" class="block py-2 px-6 text-sm hover:bg-gray-100/50" data-lang-key="nav_services_mobile">Services</a>
+            <a href="#contact" class="block py-2 px-6 text-sm hover:bg-gray-100/50" data-lang-key="nav_contact_mobile">Contact</a>
         </div>
     </header>
 
@@ -87,7 +118,7 @@
         <a href="https://wa.me/919826697835" target="_blank" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110">
             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
         </a>
-        <a href="tel:+919826697835" class="bg-blue-500 hover:bg-blue-600 text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110">
+        <a href="tel:+919826697835" class="bg-brand-primary hover:bg-opacity-80 text-white p-4 rounded-full shadow-lg transition-transform transform hover:scale-110">
             <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
         </a>
     </div>
@@ -104,33 +135,35 @@
                 <p class="max-w-4xl mx-auto text-base md:text-lg bg-black/30 p-4 rounded-lg" data-lang-key="home_slogan">
                     We are a leading service provider for STP, ETP, WTP, RO plants, DM plants, Water Softeners, Water Coolers, Water Chillers, Flow Meters, and provide all water treatment sales and services.
                 </p>
+                <div class="mt-8">
+                    <a href="https://drive.google.com/drive/folders/1WgAR7zX4Wqpz9_TxhjIKfwNT3j75njas" target="_blank" class="bg-brand-secondary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 transition-colors" data-lang-key="home_download_btn">Download Catalogue</a>
+                </div>
             </div>
         </section>
 
         <!-- ===== ABOUT US SECTION ===== -->
-        <section id="about" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
+        <section id="about" class="py-16 md:py-24 bg-brand-light-bg">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold" data-lang-key="about_title">About MK Water Filtration</h2>
-                    <p class="mt-4 text-lg text-gray-600 dark:text-gray-400" data-lang-key="about_subtitle">An ISO 9001:2015 & MSME Certified Company</p>
                 </div>
                 <div class="max-w-5xl mx-auto">
-                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md mb-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md mb-8">
                         <h3 class="font-semibold text-2xl mb-4" data-lang-key="about_story_title">Our Story</h3>
-                        <p class="prose dark:prose-invert lg:prose-xl" data-lang-key="about_story_content">
-                            Founded in Bhopal, MK Water Filtration was born from a vision to provide Central India with reliable and technologically advanced water treatment solutions. As a leading prime Manufacturer, Exporter, Trader, Supplier, and Service Provider, we are committed to tackling the region's diverse water challenges for industrial, commercial, and residential clients.
+                        <p class="prose lg:prose-xl" data-lang-key="about_story_content">
+                            Founded in Bhopal, MK Water Filtration was born from the vision of its founders, who brought over 10 years of industry experience to provide Central India with reliable and technologically advanced water treatment solutions. As a leading prime Manufacturer, Exporter, Trader, Supplier, and Service Provider, we are committed to tackling the region's diverse water challenges for industrial, commercial, and residential clients.
                         </p>
                     </div>
                     <div class="grid md:grid-cols-2 gap-8">
-                        <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
                             <h3 class="font-semibold text-2xl mb-4" data-lang-key="about_vision_title">Our Vision</h3>
-                            <p class="prose dark:prose-invert" data-lang-key="about_vision_content">
+                            <p class="prose" data-lang-key="about_vision_content">
                                 To be a socially responsible and environmentally friendly water treatment brand making a difference in people's lives by providing the best water treatment products and service.
                             </p>
                         </div>
-                        <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                        <div class="bg-white p-8 rounded-lg shadow-md">
                             <h3 class="font-semibold text-2xl mb-4" data-lang-key="about_mission_title">Our Mission</h3>
-                            <p class="prose dark:prose-invert" data-lang-key="about_mission_content">
+                            <p class="prose" data-lang-key="about_mission_content">
                                 Our mission is to improve the quality of water that was wasted in the past, maintain the quality of water we have in the present, and work on the future requirement of drinking water with the help of our innovative products and esteemed services.
                             </p>
                         </div>
@@ -139,56 +172,132 @@
             </div>
         </section>
 
+        <!-- ===== INDUSTRIES SERVED SECTION (NEW) ===== -->
+        <section id="industries" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold" data-lang-key="industries_title">Industries We Serve</h2>
+                    <p class="mt-4 text-lg" data-lang-key="industries_subtitle">Tailored water treatment solutions for a diverse range of sectors.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="industry_pharma_title">Pharmaceuticals</h3>
+                        <p class="text-gray-600" data-lang-key="industry_pharma_desc">High-purity water for manufacturing processes, compliant with all regulatory standards.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="industry_manufacturing_title">Manufacturing & Industrial</h3>
+                        <p class="text-gray-600" data-lang-key="industry_manufacturing_desc">Process water, cooling tower water treatment, and efficient effluent treatment solutions.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="industry_hospitality_title">Hotels & Resorts</h3>
+                        <p class="text-gray-600" data-lang-key="industry_hospitality_desc">Safe drinking water, soft water for laundry and bathing, and swimming pool filtration.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="industry_education_title">Educational Institutes</h3>
+                        <p class="text-gray-600" data-lang-key="industry_education_desc">Purified drinking water for students and staff, and wastewater management for campuses.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="industry_commercial_title">Shopping Malls & Commercial Complexes</h3>
+                        <p class="text-gray-600" data-lang-key="industry_commercial_desc">Centralized drinking water systems, wastewater recycling for flushing and HVAC.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="industry_food_title">Food & Beverage</h3>
+                        <p class="text-gray-600" data-lang-key="industry_food_desc">High-quality water for production, ingredient mixing, and bottling plants.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ===== PRODUCTS (CATALOGUE) SECTION ===== -->
-        <section id="products" class="py-16 md:py-24">
+        <section id="products" class="py-16 md:py-24 bg-brand-light-bg">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold" data-lang-key="products_title">Our Product Catalogue</h2>
                     <p class="mt-4 text-lg" data-lang-key="products_subtitle">A comprehensive look at our high-quality water treatment solutions.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1628121652627-20b13c35b719?q=80&w=2070&auto=format&fit=crop" alt="Commercial RO Plant" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_comm_ro_title">Commercial RO Plant</h3><p class="text-gray-600 dark:text-gray-400" data-lang-key="prod_comm_ro_desc">We offer a wide range of commercial water treatment equipment that purifies water by deploying advanced RO technology that meets the challenging environment of industries.</p></div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_comm_ro_title">Commercial RO Plant</h3>
+                        <p class="text-gray-600" data-lang-key="prod_comm_ro_desc">We offer a wide range of commercial water treatment equipment that purifies water by deploying advanced RO technology that meets the challenging environment of industries.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1581092446327-9b52bd7a0254?q=80&w=2070&auto=format&fit=crop" alt="Industrial RO Plant" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_ind_ro_title">Industrial RO Plant</h3><p class="text-gray-600 dark:text-gray-400" data-lang-key="prod_ind_ro_desc">Backed by our in-depth industry expertise, we are offering an unmatched range of Industrial RO Water Plants with exclusive designs, performance, and long service life.</p></div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_ind_ro_title">Industrial RO Plant</h3>
+                        <p class="text-gray-600" data-lang-key="prod_ind_ro_desc">Backed by our in-depth industry expertise, we are offering an unmatched range of Industrial RO Water Plants with exclusive designs, performance, and long service life.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1529333169335-184d28f895a2?q=80&w=2070&auto=format&fit=crop" alt="Water Treatment Plant for STP and ETP" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_stp_etp_title">STP & ETP</h3><p class="text-gray-600 dark:text-gray-400" data-lang-key="prod_stp_etp_desc">Effective and economical plants to remove contaminants from wastewater. We manufacture STP plants from 1 KLD to 900 KLD and ETP plants from 1 KLD to 500 KLD.</p></div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_stp_etp_title">STP & ETP</h3>
+                        <p class="text-gray-600" data-lang-key="prod_stp_etp_desc">Effective and economical plants to remove contaminants from wastewater. We manufacture STP plants from 1 KLD to 900 KLD and ETP plants from 1 KLD to 500 KLD.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1621596191122-c0c16c6d3968?q=80&w=1932&auto=format&fit=crop" alt="Chiller Plant" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_chiller_title">Chiller Plant</h3><p class="text-gray-600 dark:text-gray-400" data-lang-key="prod_chiller_desc">A Chiller plant is essential to remove heat from liquid, which can then be used to cool equipment by circulating it through a heat exchanger.</p></div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_chiller_title">Chiller Plant</h3>
+                        <p class="text-gray-600" data-lang-key="prod_chiller_desc">A Chiller plant is essential to remove heat from liquid, which can then be used to cool equipment by circulating it through a heat exchanger.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1598977114402-1a4df3a35a29?q=80&w=1974&auto=format&fit=crop" alt="Water ATM" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_water_atm_title">Water ATM</h3><p class="text-gray-600 dark:text-gray-400" data-lang-key="prod_water_atm_desc">Providing safe and affordable water at the press of a button. We manufacture Water ATMs from 100 LPH to 10000 LPH capacity.</p></div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_water_atm_title">Water ATM</h3>
+                        <p class="text-gray-600" data-lang-key="prod_water_atm_desc">Providing safe and affordable water at the press of a button. We manufacture Water ATMs from 100 LPH to 10000 LPH capacity.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1616122825385-a4a84c882e30?q=80&w=2070&auto=format&fit=crop" alt="Bottling Plant" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_bottling_title">Bottling Plant</h3><p class="text-gray-600 dark:text-gray-400" data-lang-key="prod_bottling_desc">Complete bottling solutions, including PET blowing machines, automatic rinsing, filling, and capping machines, UV systems, and more for beverage distribution.</p></div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_bottling_title">Bottling Plant</h3>
+                        <p class="text-gray-600" data-lang-key="prod_bottling_desc">Complete bottling solutions, including PET blowing machines, automatic rinsing, filling, and capping machines, UV systems, and more for beverage distribution.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1621358213778-8d071a1c925e?q=80&w=1974&auto=format&fit=crop" alt="Water Cooler" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_cooler_title">Water Cooler</h3><p class="text-gray-600 dark:text-gray-400" data-lang-key="prod_cooler_desc">We provide a variety of water coolers and dispensers, including point-of-use (POU) and bottled water coolers from top brands like Voltas and Bluestar.</p></div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_cooler_title">Water Cooler</h3>
+                        <p class="text-gray-600" data-lang-key="prod_cooler_desc">We provide a variety of water coolers and dispensers, including point-of-use (POU) and bottled water coolers from top brands like Voltas and Bluestar.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1567103452921-3850b694154b?q=80&w=1974&auto=format&fit=crop" alt="Ultra Filtration System" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_uf_title">Ultra Filtration System</h3><p class="text-gray-600 dark:text-gray-400" data-lang-key="prod_uf_desc">A membrane filtration process where pressure leads to separation through a semipermeable membrane, used to recycle and reuse water.</p></div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_uf_title">Ultra Filtration System</h3>
+                        <p class="text-gray-600" data-lang-key="prod_uf_desc">A membrane filtration process where pressure leads to separation through a semipermeable membrane, used to recycle and reuse water.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1557994447-920a32bf02a6?q=80&w=2070&auto=format&fit=crop" alt="Water Treatment Plant / Sand Filter" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_wtp_title">Water Treatment Plant (WTP)</h3><p class="text-gray-600 dark:text-gray-400" data-lang-key="prod_wtp_desc">Any process that improves water quality for a specific end-use. We provide plants from 500 LPH to 300,000 LPH in MS, SS, and FRP.</p></div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_wtp_title">Water Treatment Plant (WTP)</h3>
+                        <p class="text-gray-600" data-lang-key="prod_wtp_desc">Any process that improves water quality for a specific end-use. We provide plants from 500 LPH to 300,000 LPH in MS, SS, and FRP.</p>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_softener_title">Water Softener</h3>
+                        <p class="text-gray-600" data-lang-key="prod_softener_desc">Removes calcium and magnesium from hard water, preventing scaling on fixtures and appliances.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_dm_title">DM Plant</h3>
+                        <p class="text-gray-600" data-lang-key="prod_dm_desc">Demineralization plants for producing high-purity, mineral-free water for industrial applications.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_sand_filter_title">Sand Filter</h3>
+                        <p class="text-gray-600" data-lang-key="prod_sand_filter_desc">Effective removal of suspended solids and turbidity from water using graded sand media.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_carbon_filter_title">Activated Carbon Filter</h3>
+                        <p class="text-gray-600" data-lang-key="prod_carbon_filter_desc">Removes chlorine, organic compounds, and improves taste and odor of water.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_iron_remover_title">Iron Remover</h3>
+                        <p class="text-gray-600" data-lang-key="prod_iron_remover_desc">Specialized systems to eliminate iron content, preventing staining and metallic taste.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_multigrade_filter_title">Multigrade Filter</h3>
+                        <p class="text-gray-600" data-lang-key="prod_multigrade_filter_desc">Advanced filtration with multiple layers of media for superior removal of suspended solids.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_dosing_pump_title">Dosing Pump</h3>
+                        <p class="text-gray-600" data-lang-key="prod_dosing_pump_desc">Precise chemical dosing pumps for various water treatment applications.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_filter_vessels_title">Filter Vessels</h3>
+                        <p class="text-gray-600" data-lang-key="prod_filter_vessels_desc">Durable FRP and stainless steel vessels for housing various filter media.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_ro_membranes_title">RO Membranes</h3>
+                        <p class="text-gray-600" data-lang-key="prod_ro_membranes_desc">High-rejection reverse osmosis membranes for commercial and industrial systems.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="prod_chemicals_title">Water Treatment Chemicals</h3>
+                        <p class="text-gray-600" data-lang-key="prod_chemicals_desc">A complete range of chemicals including antiscalants, biocultures, and cleaning agents.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ===== SERVICES SECTION (REVISED) ===== -->
-        <section id="services" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
+        <section id="services" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold" data-lang-key="services_title">Our Core Services</h2>
@@ -196,45 +305,158 @@
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Service Card -->
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1603959117621-ee356a12535a?q=80&w=2070&auto=format&fit=crop" alt="Sewage Treatment Plant Services" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="service_stp_title">Sewage Treatment Plants</h3></div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="service_stp_title">Sewage Treatment Plants</h3>
+                        <p class="text-gray-600" data-lang-key="service_stp_desc">Comprehensive services for STPs, ensuring efficient operation and environmental compliance.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1617953141905-d27b6c781642?q=80&w=2070&auto=format&fit=crop" alt="Effluent Treatment Plant Services" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="service_etp_title">Effluent Treatment Plants</h3></div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="service_etp_title">Effluent Treatment Plants</h3>
+                        <p class="text-gray-600" data-lang-key="service_etp_desc">Expert solutions for industrial effluent, helping you meet all discharge regulations.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1581092446327-9b52bd7a0254?q=80&w=2070&auto=format&fit=crop" alt="Wastewater Treatment Services" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="service_waste_title">Wastewater Treatment</h3></div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="service_waste_title">Wastewater Treatment</h3>
+                        <p class="text-gray-600" data-lang-key="service_waste_desc">Complete treatment solutions to recycle and reuse wastewater for various applications.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?q=80&w=2070&auto=format&fit=crop" alt="Rain Water Harvesting Services" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="service_rain_title">Rain Water Harvesting</h3></div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="service_rain_title">Rain Water Harvesting</h3>
+                        <p class="text-gray-600" data-lang-key="service_rain_desc">We design and maintain systems to conserve water and reduce your environmental footprint.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1628121652627-20b13c35b719?q=80&w=2070&auto=format&fit=crop" alt="RO Plant Services" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="service_ro_title">RO Plant Sales & Service</h3></div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="service_ro_title">RO Plant Sales & Service</h3>
+                        <p class="text-gray-600" data-lang-key="service_ro_desc">End-to-end support for all types of RO plants, from initial setup to ongoing maintenance.</p>
                     </div>
-                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://images.unsplash.com/photo-1542884748-2b87b36c6b90?q=80&w=1974&auto=format&fit=crop" alt="Swimming Pool Filtration" class="w-full h-48 object-cover">
-                        <div class="p-6 flex-grow"><h3 class="text-2xl font-semibold mb-2" data-lang-key="service_pool_title">Swimming Pool Filtration</h3></div>
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" data-lang-key="service_pool_title">Swimming Pool Filtration</h3>
+                        <p class="text-gray-600" data-lang-key="service_pool_desc">Keep your pool water crystal clear and safe with our professional filtration services.</p>
                     </div>
                 </div>
             </div>
         </section>
         
         <!-- ===== CTA SECTION ===== -->
-        <section class="bg-blue-600 text-white">
+        <section class="bg-brand-primary text-white">
             <div class="container mx-auto px-6 py-16 text-center">
                 <h2 class="text-3xl font-bold mb-4" data-lang-key="cta_title">Ready to Discuss Your Water Treatment Needs?</h2>
                 <p class="text-lg mb-8" data-lang-key="cta_subtitle">Our experts are here to help you find the perfect solution.</p>
-                <a href="#contact" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-200 transition-colors" data-lang-key="cta_button">Get a Free Consultation</a>
+                <a href="#contact" class="bg-white text-brand-primary font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-200 transition-colors" data-lang-key="cta_button">Get a Free Consultation</a>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS SECTION (NEW) ===== -->
+        <section id="testimonials" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold" data-lang-key="testimonials_title">What Our Clients Say</h2>
+                </div>
+            </div>
+            <div class="testimonial-ribbon-container">
+                <div class="testimonial-ribbon">
+                    <!-- Testimonials Set 1 -->
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_1_text">"The RO plant installed at our facility has been running flawlessly. MK Water Filtration's service is top-notch."</p>
+                            <p class="font-bold" data-lang-key="testimonial_1_author">- R. Sharma, Plant Manager</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_1_company">Pharma Pvt. Ltd.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_2_text">"Their ETP solution has helped us meet all compliance standards. Highly recommended for industrial wastewater treatment."</p>
+                            <p class="font-bold" data-lang-key="testimonial_2_author">- A. Khan, Factory Head</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_2_company">Manufacturing Co.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_3_text">"Our guests consistently compliment the water quality. The water softener and pool filtration systems are excellent."</p>
+                            <p class="font-bold" data-lang-key="testimonial_3_author">- S. Verma, General Manager</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_3_company">Grand Hotel Bhopal</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_4_text">"The drinking water solution for our campus is reliable and provides safe water for all our students. Great service!"</p>
+                            <p class="font-bold" data-lang-key="testimonial_4_author">- Dr. N. Gupta, Principal</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_4_company">Bhopal Engineering College</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_5_text">"MK Water Filtration manages the entire water system for our mall. Their team is professional and always available."</p>
+                            <p class="font-bold" data-lang-key="testimonial_5_author">- P. Singh, Operations Manager</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_5_company">City Centre Mall</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_6_text">"The water quality is critical for our products. The RO and UV systems from MK Water are perfect for our needs."</p>
+                            <p class="font-bold" data-lang-key="testimonial_6_author">- M. Jain, Owner</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_6_company">Fresh Juices & Beverages</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_7_text">"Our society's STP has been working efficiently since they took over the maintenance. Very satisfied."</p>
+                            <p class="font-bold" data-lang-key="testimonial_7_author">- V. Patel, Society Secretary</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_7_company">Green Valley Apartments</p>
+                        </div>
+                    </div>
+                    <!-- Testimonials Set 2 (Duplicate for seamless loop) -->
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_1_text">"The RO plant installed at our facility has been running flawlessly. MK Water Filtration's service is top-notch."</p>
+                            <p class="font-bold" data-lang-key="testimonial_1_author">- R. Sharma, Plant Manager</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_1_company">Pharma Pvt. Ltd.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_2_text">"Their ETP solution has helped us meet all compliance standards. Highly recommended for industrial wastewater treatment."</p>
+                            <p class="font-bold" data-lang-key="testimonial_2_author">- A. Khan, Factory Head</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_2_company">Manufacturing Co.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_3_text">"Our guests consistently compliment the water quality. The water softener and pool filtration systems are excellent."</p>
+                            <p class="font-bold" data-lang-key="testimonial_3_author">- S. Verma, General Manager</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_3_company">Grand Hotel Bhopal</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_4_text">"The drinking water solution for our campus is reliable and provides safe water for all our students. Great service!"</p>
+                            <p class="font-bold" data-lang-key="testimonial_4_author">- Dr. N. Gupta, Principal</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_4_company">Bhopal Engineering College</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_5_text">"MK Water Filtration manages the entire water system for our mall. Their team is professional and always available."</p>
+                            <p class="font-bold" data-lang-key="testimonial_5_author">- P. Singh, Operations Manager</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_5_company">City Centre Mall</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_6_text">"The water quality is critical for our products. The RO and UV systems from MK Water are perfect for our needs."</p>
+                            <p class="font-bold" data-lang-key="testimonial_6_author">- M. Jain, Owner</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_6_company">Fresh Juices & Beverages</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-card p-4">
+                        <div class="bg-white rounded-lg shadow-lg p-6 h-full">
+                            <p class="text-gray-600 mb-4" data-lang-key="testimonial_7_text">"Our society's STP has been working efficiently since they took over the maintenance. Very satisfied."</p>
+                            <p class="font-bold" data-lang-key="testimonial_7_author">- V. Patel, Society Secretary</p>
+                            <p class="text-sm text-gray-500" data-lang-key="testimonial_7_company">Green Valley Apartments</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- ===== CONTACT SECTION ===== -->
-        <section id="contact" class="py-16 md:py-24 bg-gray-50 dark:bg-gray-800">
+        <section id="contact" class="py-16 md:py-24 bg-brand-light-bg">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold" data-lang-key="contact_title">Get In Touch</h2>
@@ -243,36 +465,37 @@
                 <div class="grid lg:grid-cols-2 gap-12">
                     <!-- Contact Info & Map -->
                     <div>
-                        <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md mb-8">
+                        <div class="bg-white p-8 rounded-lg shadow-md mb-8">
                             <h3 class="text-2xl font-semibold mb-6" data-lang-key="contact_info_title">Contact Information</h3>
                             <div class="space-y-4">
                                 <div class="flex items-start space-x-4">
-                                    <svg class="w-6 h-6 text-blue-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                    <svg class="w-6 h-6 text-brand-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                                     <div>
                                         <h4 class="font-semibold" data-lang-key="contact_phone_title">Call & WhatsApp</h4>
-                                        <a href="tel:+919826697835" class="hover:text-blue-500">+91 9826697835</a><br>
-                                        <a href="tel:+919630511604" class="hover:text-blue-500">+91 9630511604</a>
+                                        <p><a href="tel:+919826697835" class="hover:text-brand-primary">+91 9826697835</a> (Kunwar Singh Dangi)</p>
+                                        <p><a href="tel:+919630511604" class="hover:text-brand-primary">+91 9630511604</a> (Manmohan Agarwal)</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-4">
-                                    <svg class="w-6 h-6 text-blue-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                    <svg class="w-6 h-6 text-brand-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                                     <div>
                                         <h4 class="font-semibold" data-lang-key="contact_email_title">Email Us</h4>
-                                        <a href="mailto:mkwaterfiltration@gmail.com" class="hover:text-blue-500">mkwaterfiltration@gmail.com</a>
+                                        <a href="mailto:mkwaterfiltration@gmail.com" class="hover:text-brand-primary">mkwaterfiltration@gmail.com</a>
                                     </div>
                                 </div>
                                 <div class="flex items-start space-x-4">
-                                    <svg class="w-6 h-6 text-blue-500 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    <svg class="w-6 h-6 text-brand-primary mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                                     <div>
                                         <h4 class="font-semibold" data-lang-key="contact_address_title">Our Address</h4>
                                         <p data-lang-key="contact_address_content">H.No.126, H Sector, Rajharsh Colony, Kolar Road, Bhopal, Madhya Pradesh.</p>
+                                        <a href="https://maps.app.goo.gl/u6CJ22ejfHxi2bmG9?g_st=ipc" target="_blank" class="text-brand-primary hover:underline" data-lang-key="contact_map_link">Open Map Location</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="rounded-lg shadow-md overflow-hidden h-80">
                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.632205730419!2d77.4082483154133!3d23.1832969848719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4269f8f26a2b%3A0x2f520b2d355b2b2b!2sM%20K%20WATER%20FILTRATION!5e0!3m2!1sen!2sin!4v1678886400000"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.939294868498!2d77.4157343759108!3d23.17206491321494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c43c871081177%3A0x1b717b0b6b6b6b6b!2sM%20K%20WATER%20FILTRATION!5e0!3m2!1sen!2sin!4v1723058245353!5m2!1sen!2sin"
                                 width="100%" 
                                 height="100%" 
                                 style="border:0;" 
@@ -284,28 +507,28 @@
                     </div>
                     
                     <!-- Contact Form -->
-                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                    <div class="bg-white p-8 rounded-lg shadow-md">
                         <h3 class="text-2xl font-semibold mb-6" data-lang-key="contact_form_title">Send Us a Message</h3>
                         <form action="https://formspree.io/f/mdkdpeyz" method="POST">
                             <div class="space-y-6">
                                 <div>
                                     <label for="name" class="block text-sm font-medium" data-lang-key="form_name">Name</label>
-                                    <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-primary focus:border-brand-primary">
                                 </div>
                                 <div>
                                     <label for="phone" class="block text-sm font-medium" data-lang-key="form_phone">Phone Number</label>
-                                    <input type="tel" name="phone" id="phone" required class="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    <input type="tel" name="phone" id="phone" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-primary focus:border-brand-primary">
                                 </div>
                                 <div>
                                     <label for="email" class="block text-sm font-medium" data-lang-key="form_email">Email</label>
-                                    <input type="email" name="_replyto" id="email" required class="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    <input type="email" name="_replyto" id="email" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-primary focus:border-brand-primary">
                                 </div>
                                 <div>
                                     <label for="message" class="block text-sm font-medium" data-lang-key="form_message">Message</label>
-                                    <textarea name="message" id="message" rows="4" required class="mt-1 block w-full px-3 py-2 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
+                                    <textarea name="message" id="message" rows="4" required class="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-brand-primary focus:border-brand-primary"></textarea>
                                 </div>
                                 <div>
-                                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" data-lang-key="form_submit">
+                                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-brand-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary" data-lang-key="form_submit">
                                         Send Inquiry
                                     </button>
                                 </div>
@@ -318,7 +541,7 @@
     </main>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="bg-gray-800 dark:bg-black text-gray-400">
+    <footer class="bg-gray-800 text-white">
         <div class="container mx-auto px-6 py-6 text-center">
             <p>&copy; <span id="footer-year"></span> M K WATER FILTRATION. All Rights Reserved.</p>
         </div>
@@ -326,69 +549,36 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // ===== THEME TOGGLE LOGIC =====
-            const html = document.documentElement;
-            const themeToggle = document.getElementById('theme-toggle');
-            const lightIcon = document.getElementById('theme-toggle-light-icon');
-            const darkIcon = document.getElementById('theme-toggle-dark-icon');
-
-            // Helper to show correct icon
-            function updateThemeIcons(isDark) {
-                if (isDark) {
-                    lightIcon.classList.remove('hidden'); // Show sun icon to switch to light
-                    darkIcon.classList.add('hidden');
-                } else {
-                    darkIcon.classList.remove('hidden'); // Show moon icon to switch to dark
-                    lightIcon.classList.add('hidden');
-                }
-            }
-
-            // Initial load: check saved theme or system preference
-            function getPreferredTheme() {
-                if (localStorage.getItem('theme') === 'dark') return 'dark';
-                if (localStorage.getItem('theme') === 'light') return 'light';
-                // If no theme is stored, default to light
-                return 'light';
-            }
-
-            function setTheme(theme) {
-                if (theme === 'dark') {
-                    html.classList.add('dark');
-                    localStorage.setItem('theme', 'dark');
-                    updateThemeIcons(true);
-                } else {
-                    html.classList.remove('dark');
-                    localStorage.setItem('theme', 'light');
-                    updateThemeIcons(false);
-                }
-            }
-
-            // Set initial theme
-            setTheme(getPreferredTheme());
-
-            // Toggle on button click
-            themeToggle.addEventListener('click', function () {
-                const isDark = html.classList.contains('dark');
-                setTheme(isDark ? 'light' : 'dark');
-            });
-
-
             // ===== LANGUAGE DATA & SWITCHER =====
             const translations = {
                 en: {
-                    nav_home: "Home", nav_about: "About", nav_products: "Products", nav_services: "Services", nav_contact: "Contact",
-                    nav_home_mobile: "Home", nav_about_mobile: "About", nav_products_mobile: "Products", nav_services_mobile: "Services", nav_contact_mobile: "Contact",
+                    nav_home: "Home", nav_about: "About", nav_industries: "Industries", nav_products: "Products", nav_services: "Services", nav_contact: "Contact",
+                    nav_home_mobile: "Home", nav_about_mobile: "About", nav_industries_mobile: "Industries", nav_products_mobile: "Products", nav_services_mobile: "Services", nav_contact_mobile: "Contact",
                     home_title: "M K WATER FILTRATION",
                     home_subtitle: "Your Trusted Partner for Pure Water Solutions in Central India.",
                     home_slogan: "We are a leading service provider for STP, ETP, WTP, RO plants, DM plants, Water Softeners, Water Coolers, Water Chillers, Flow Meters, and provide all water treatment sales and services.",
+                    home_download_btn: "Download Catalogue",
                     about_title: "About MK Water Filtration",
-                    about_subtitle: "An ISO 9001:2015 & MSME Certified Company",
                     about_story_title: "Our Story",
-                    about_story_content: "Founded in Bhopal, MK Water Filtration was born from a vision to provide Central India with reliable and technologically advanced water treatment solutions. As a leading prime Manufacturer, Exporter, Trader, Supplier, and Service Provider, we are committed to tackling the region's diverse water challenges for industrial, commercial, and residential clients.",
+                    about_story_content: "Founded in Bhopal, MK Water Filtration was born from the vision of its founders, who brought over 10 years of industry experience to provide Central India with reliable and technologically advanced water treatment solutions. As a leading prime Manufacturer, Exporter, Trader, Supplier, and Service Provider, we are committed to tackling the region's diverse water challenges for industrial, commercial, and residential clients.",
                     about_vision_title: "Our Vision",
                     about_vision_content: "To be a socially responsible and environmentally friendly water treatment brand making a difference in people's lives by providing the best water treatment products and service.",
                     about_mission_title: "Our Mission",
                     about_mission_content: "Our mission is to improve the quality of water that was wasted in the past, maintain the quality of water we have in the present, and work on the future requirement of drinking water with the help of our innovative products and esteemed services.",
+                    industries_title: "Industries We Serve",
+                    industries_subtitle: "Tailored water treatment solutions for a diverse range of sectors.",
+                    industry_pharma_title: "Pharmaceuticals",
+                    industry_pharma_desc: "High-purity water for manufacturing processes, compliant with all regulatory standards.",
+                    industry_manufacturing_title: "Manufacturing & Industrial",
+                    industry_manufacturing_desc: "Process water, cooling tower water treatment, and efficient effluent treatment solutions.",
+                    industry_hospitality_title: "Hotels & Resorts",
+                    industry_hospitality_desc: "Safe drinking water, soft water for laundry and bathing, and swimming pool filtration.",
+                    industry_education_title: "Educational Institutes",
+                    industry_education_desc: "Purified drinking water for students and staff, and wastewater management for campuses.",
+                    industry_commercial_title: "Shopping Malls & Commercial Complexes",
+                    industry_commercial_desc: "Centralized drinking water systems, wastewater recycling for flushing and HVAC.",
+                    industry_food_title: "Food & Beverage",
+                    industry_food_desc: "High-quality water for production, ingredient mixing, and bottling plants.",
                     products_title: "Our Product Catalogue",
                     products_subtitle: "A comprehensive look at our high-quality water treatment solutions.",
                     prod_comm_ro_title: "Commercial RO Plant",
@@ -409,14 +599,62 @@
                     prod_uf_desc: "A membrane filtration process where pressure leads to separation through a semipermeable membrane, used to recycle and reuse water.",
                     prod_wtp_title: "Water Treatment Plant (WTP)",
                     prod_wtp_desc: "Any process that improves water quality for a specific end-use. We provide plants from 500 LPH to 300,000 LPH in MS, SS, and FRP.",
+                    prod_softener_title: "Water Softener",
+                    prod_softener_desc: "Removes calcium and magnesium from hard water, preventing scaling on fixtures and appliances.",
+                    prod_dm_title: "DM Plant",
+                    prod_dm_desc: "Demineralization plants for producing high-purity, mineral-free water for industrial applications.",
+                    prod_sand_filter_title: "Sand Filter",
+                    prod_sand_filter_desc: "Effective removal of suspended solids and turbidity from water using graded sand media.",
+                    prod_carbon_filter_title: "Activated Carbon Filter",
+                    prod_carbon_filter_desc: "Removes chlorine, organic compounds, and improves taste and odor of water.",
+                    prod_iron_remover_title: "Iron Remover",
+                    prod_iron_remover_desc: "Specialized systems to eliminate iron content, preventing staining and metallic taste.",
+                    prod_multigrade_filter_title: "Multigrade Filter",
+                    prod_multigrade_filter_desc: "Advanced filtration with multiple layers of media for superior removal of suspended solids.",
+                    prod_dosing_pump_title: "Dosing Pump",
+                    prod_dosing_pump_desc: "Precise chemical dosing pumps for various water treatment applications.",
+                    prod_filter_vessels_title: "Filter Vessels",
+                    prod_filter_vessels_desc: "Durable FRP and stainless steel vessels for housing various filter media.",
+                    prod_ro_membranes_title: "RO Membranes",
+                    prod_ro_membranes_desc: "High-rejection reverse osmosis membranes for commercial and industrial systems.",
+                    prod_chemicals_title: "Water Treatment Chemicals",
+                    prod_chemicals_desc: "A complete range of chemicals including antiscalants, biocultures, and cleaning agents.",
                     services_title: "Our Core Services",
                     services_subtitle: "Comprehensive solutions for every water treatment need.",
                     service_stp_title: "Sewage Treatment Plants",
+                    service_stp_desc: "Comprehensive services for STPs, ensuring efficient operation and environmental compliance.",
                     service_etp_title: "Effluent Treatment Plants",
+                    service_etp_desc: "Expert solutions for industrial effluent, helping you meet all discharge regulations.",
                     service_waste_title: "Wastewater Treatment",
+                    service_waste_desc: "Complete treatment solutions to recycle and reuse wastewater for various applications.",
                     service_rain_title: "Rain Water Harvesting",
+                    service_rain_desc: "We design and maintain systems to conserve water and reduce your environmental footprint.",
                     service_ro_title: "RO Plant Sales & Service",
+                    service_ro_desc: "End-to-end support for all types of RO plants, from initial setup to ongoing maintenance.",
                     service_pool_title: "Swimming Pool Filtration",
+                    service_pool_desc: "Keep your pool water crystal clear and safe with our professional filtration services.",
+                    testimonials_title: "What Our Clients Say",
+                    testimonial_1_text: "\"The RO plant installed at our facility has been running flawlessly. MK Water Filtration's service is top-notch.\"",
+                    testimonial_1_author: "- R. Sharma, Plant Manager",
+                    testimonial_1_company: "Pharma Pvt. Ltd.",
+                    testimonial_2_text: "\"Their ETP solution has helped us meet all compliance standards. Highly recommended for industrial wastewater treatment.\"",
+                    testimonial_2_author: "- A. Khan, Factory Head",
+                    testimonial_2_company: "Manufacturing Co.",
+                    testimonial_3_text: "\"Our guests consistently compliment the water quality. The water softener and pool filtration systems are excellent.\"",
+                    testimonial_3_author: "- S. Verma, General Manager",
+                    testimonial_3_company: "Grand Hotel Bhopal",
+                    testimonial_4_text: "\"The drinking water solution for our campus is reliable and provides safe water for all our students. Great service!\"",
+                    testimonial_4_author: "- Dr. N. Gupta, Principal",
+                    testimonial_4_company: "Bhopal Engineering College",
+                    testimonial_5_text: "\"MK Water Filtration manages the entire water system for our mall. Their team is professional and always available.\"",
+                    testimonial_5_author: "- P. Singh, Operations Manager",
+                    testimonial_5_company: "City Centre Mall",
+                    testimonial_6_text: "\"The water quality is critical for our products. The RO and UV systems from MK Water are perfect for our needs.\"",
+                    testimonial_6_author: "- M. Jain, Owner",
+                    testimonial_6_company: "Fresh Juices & Beverages",
+                    testimonial_7_text: "\"Our society's STP has been working efficiently since they took over the maintenance. Very satisfied.\"",
+                    testimonial_7_author: "- V. Patel, Society Secretary",
+                    testimonial_7_company: "Green Valley Apartments",
                     cta_button_catalogue: "View Full Product Catalogue",
                     cta_title: "Ready to Discuss Your Water Treatment Needs?",
                     cta_subtitle: "Our experts are here to help you find the perfect solution.",
@@ -426,23 +664,38 @@
                     contact_info_title: "Contact Information",
                     contact_phone_title: "Call & WhatsApp", contact_email_title: "Email Us", contact_address_title: "Our Address",
                     contact_address_content: "H.No.126, H Sector, Rajharsh Colony, Kolar Road, Bhopal, Madhya Pradesh.",
+                    contact_map_link: "Open Map Location",
                     contact_form_title: "Send Us a Message",
                     form_name: "Name", form_phone: "Phone Number", form_email: "Email", form_message: "Message", form_submit: "Send Inquiry"
                 },
                 hi: {
-                    nav_home: "होम", nav_about: "हमारे बारे में", nav_products: "उत्पाद", nav_services: "सेवाएं", nav_contact: "संपर्क",
-                    nav_home_mobile: "होम", nav_about_mobile: "हमारे बारे में", nav_products_mobile: "उत्पाद", nav_services_mobile: "सेवाएं", nav_contact_mobile: "संपर्क",
+                    nav_home: "होम", nav_about: "हमारे बारे में", nav_industries: "उद्योग", nav_products: "उत्पाद", nav_services: "सेवाएं", nav_contact: "संपर्क",
+                    nav_home_mobile: "होम", nav_about_mobile: "हमारे बारे में", nav_industries_mobile: "उद्योग", nav_products_mobile: "उत्पाद", nav_services_mobile: "सेवाएं", nav_contact_mobile: "संपर्क",
                     home_title: "एम के वाटर फिल्ट्रेशन",
                     home_subtitle: "मध्य भारत में शुद्ध जल समाधान के लिए आपका विश्वसनीय भागीदार।",
                     home_slogan: "हम एसटीपी, ईटीपी, डब्ल्यूटीपी, आरओ प्लांट, डीएम प्लांट, वाटर सॉफ्टनर, वाटर कूलर, वाटर चिलर, फ्लो मीटर के एक अग्रणी सेवा प्रदाता हैं, और सभी जल उपचार बिक्री और सेवाएं प्रदान करते हैं।",
+                    home_download_btn: "कैटलॉग डाउनलोड करें",
                     about_title: "एमके वाटर फिल्ट्रेशन के बारे में",
-                    about_subtitle: "एक आईएसओ 9001:2015 और एमएसएमई प्रमाणित कंपनी",
                     about_story_title: "हमारी कहानी",
-                    about_story_content: "भोपाल में स्थापित, एमके वाटर फिल्ट्रेशन की शुरुआत मध्य भारत को विश्वसनीय और तकनीकी रूप से उन्नत जल उपचार समाधान प्रदान करने की दृष्टि से हुई थी। एक प्रमुख निर्माता, निर्यातक, व्यापारी, आपूर्तिकर्ता और सेवा प्रदाता के रूप में, हम औद्योगिक, वाणिज्यिक और आवासीय ग्राहकों के लिए इस क्षेत्र की विविध जल चुनौतियों से निपटने के लिए प्रतिबद्ध हैं।",
+                    about_story_content: "भोपाल में स्थापित, एमके वाटर फिल्ट्रेशन की शुरुआत इसके संस्थापकों की दृष्टि से हुई थी, जो मध्य भारत को विश्वसनीय और तकनीकी रूप से उन्नत जल उपचार समाधान प्रदान करने के लिए 10 से अधिक वर्षों का उद्योग अनुभव लेकर आए। एक प्रमुख निर्माता, निर्यातक, व्यापारी, आपूर्तिकर्ता और सेवा प्रदाता के रूप में, हम औद्योगिक, वाणिज्यिक और आवासीय ग्राहकों के लिए इस क्षेत्र की विविध जल चुनौतियों से निपटने के लिए प्रतिबद्ध हैं।",
                     about_vision_title: "हमारा दृष्टिकोण",
                     about_vision_content: "सर्वोत्तम जल उपचार उत्पाद और सेवा प्रदान करके लोगों के जीवन में बदलाव लाने वाला एक सामाजिक रूप से जिम्मेदार और पर्यावरण के अनुकूल जल उपचार ब्रांड बनना।",
                     about_mission_title: "हमारा मिशन",
                     about_mission_content: "हमारा मिशन अतीत में बर्बाद हुए पानी की गुणवत्ता में सुधार करना, वर्तमान में हमारे पास मौजूद पानी की गुणवत्ता को बनाए रखना और हमारे नवीन उत्पादों और सम्मानित सेवाओं की मदद से पीने के पानी की भविष्य की आवश्यकता पर काम करना है।",
+                    industries_title: "हम जिन उद्योगों की सेवा करते हैं",
+                    industries_subtitle: "विभिन्न क्षेत्रों के लिए विशेष जल उपचार समाधान।",
+                    industry_pharma_title: "फार्मास्यूटिकल्स",
+                    industry_pharma_desc: "विनिर्माण प्रक्रियाओं के लिए उच्च शुद्धता वाला पानी, जो सभी नियामक मानकों के अनुरूप है।",
+                    industry_manufacturing_title: "विनिर्माण और औद्योगिक",
+                    industry_manufacturing_desc: "प्रक्रिया जल, कूलिंग टॉवर जल उपचार, और कुशल अपशिष्ट उपचार समाधान।",
+                    industry_hospitality_title: "होटल और रिसॉर्ट्स",
+                    industry_hospitality_desc: "सुरक्षित पेयजल, कपड़े धोने और नहाने के लिए शीतल जल, और स्विमिंग पूल निस्पंदन।",
+                    industry_education_title: "शैक्षिक संस्थान",
+                    industry_education_desc: "छात्रों और कर्मचारियों के लिए शुद्ध पेयजल, और परिसरों के लिए अपशिष्ट जल प्रबंधन।",
+                    industry_commercial_title: "शॉपिंग मॉल और वाणिज्यिक परिसर",
+                    industry_commercial_desc: "केंद्रीकृत पेयजल प्रणाली, फ्लशिंग और एचवीएसी के लिए अपशिष्ट जल पुनर्चक्रण।",
+                    industry_food_title: "खाद्य और पेय",
+                    industry_food_desc: "उत्पादन, सामग्री मिश्रण और बॉटलिंग संयंत्रों के लिए उच्च गुणवत्ता वाला पानी।",
                     products_title: "हमारी उत्पाद सूची",
                     products_subtitle: "हमारे उच्च-गुणवत्ता वाले जल उपचार समाधानों पर एक व्यापक नज़र।",
                     prod_comm_ro_title: "वाणिज्यिक आरओ प्लांट",
@@ -463,14 +716,62 @@
                     prod_uf_desc: "एक झिल्ली निस्पंदन प्रक्रिया जहां दबाव एक अर्धपारगम्य झिल्ली के माध्यम से पृथक्करण की ओर जाता है, जिसका उपयोग पानी को रीसायकल और पुन: उपयोग करने के लिए किया जाता है।",
                     prod_wtp_title: "जल उपचार संयंत्र (डब्ल्यूटीपी)",
                     prod_wtp_desc: "कोई भी प्रक्रिया जो किसी विशिष्ट अंतिम उपयोग के लिए पानी की गुणवत्ता में सुधार करती है। हम एमएस, एसएस और एफआरपी में 500 LPH से 300,000 LPH तक के संयंत्र प्रदान करते हैं।",
+                    prod_softener_title: "वाटर सॉफ्टनर",
+                    prod_softener_desc: "कठोर पानी से कैल्शियम और मैग्नीशियम निकालता है, फिक्स्चर और उपकरणों पर स्केलिंग को रोकता है।",
+                    prod_dm_title: "डीएम प्लांट",
+                    prod_dm_desc: "औद्योगिक अनुप्रयोगों के लिए उच्च शुद्धता, खनिज मुक्त पानी का उत्पादन करने के लिए विखनिजीकरण संयंत्र।",
+                    prod_sand_filter_title: "सैंड फ़िल्टर",
+                    prod_sand_filter_desc: "वर्गीकृत रेत मीडिया का उपयोग करके पानी से निलंबित ठोस और गंदगी का प्रभावी निष्कासन।",
+                    prod_carbon_filter_title: "सक्रिय कार्बन फ़िल्टर",
+                    prod_carbon_filter_desc: "क्लोरीन, कार्बनिक यौगिकों को हटाता है, और पानी के स्वाद और गंध में सुधार करता है।",
+                    prod_iron_remover_title: "आयरन रिमूवर",
+                    prod_iron_remover_desc: "लौह सामग्री को खत्म करने, धुंधलापन और धातु के स्वाद को रोकने के लिए विशेष प्रणाली।",
+                    prod_multigrade_filter_title: "मल्टीग्रेड फ़िल्टर",
+                    prod_multigrade_filter_desc: "निलंबित ठोस पदार्थों के बेहतर निष्कासन के लिए मीडिया की कई परतों के साथ उन्नत निस्पंदन।",
+                    prod_dosing_pump_title: "डोजिंग पंप",
+                    prod_dosing_pump_desc: "विभिन्न जल उपचार अनुप्रयोगों के लिए सटीक रासायनिक खुराक पंप।",
+                    prod_filter_vessels_title: "फ़िल्टर वेसल्स",
+                    prod_filter_vessels_desc: "विभिन्न फ़िल्टर मीडिया रखने के लिए टिकाऊ एफआरपी और स्टेनलेस स्टील के बर्तन।",
+                    prod_ro_membranes_title: "आरओ मेम्ब्रेन",
+                    prod_ro_membranes_desc: "वाणिज्यिक और औद्योगिक प्रणालियों के लिए उच्च-अस्वीकृति रिवर्स ऑस्मोसिस झिल्ली।",
+                    prod_chemicals_title: "जल उपचार रसायन",
+                    prod_chemicals_desc: "एंटीस्केलेंट, बायोकल्चर और सफाई एजेंटों सहित रसायनों की एक पूरी श्रृंखला।",
                     services_title: "हमारी मुख्य सेवाएं",
                     services_subtitle: "हर जल उपचार की जरूरत के लिए व्यापक समाधान।",
                     service_stp_title: "सीवेज ट्रीटमेंट प्लांट",
+                    service_stp_desc: "एसटीपी के लिए व्यापक सेवाएं, कुशल संचालन और पर्यावरणीय अनुपालन सुनिश्चित करना।",
                     service_etp_title: "एफ्लुएंट ट्रीटमेंट प्लांट",
+                    service_etp_desc: "औद्योगिक अपशिष्ट के लिए विशेषज्ञ समाधान, जो आपको सभी निर्वहन नियमों को पूरा करने में मदद करते हैं।",
                     service_waste_title: "अपशिष्ट जल उपचार",
+                    service_waste_desc: "विभिन्न अनुप्रयोगों के लिए अपशिष्ट जल को रीसायकल और पुन: उपयोग करने के लिए पूर्ण उपचार समाधान।",
                     service_rain_title: "वर्षा जल संचयन",
+                    service_rain_desc: "हम पानी के संरक्षण और आपके पर्यावरणीय पदचिह्न को कम करने के लिए सिस्टम डिजाइन और रखरखाव करते हैं।",
                     service_ro_title: "आरओ प्लांट बिक्री और सेवा",
+                    service_ro_desc: "प्रारंभिक सेटअप से लेकर चल रहे रखरखाव तक, सभी प्रकार के आरओ संयंत्रों के लिए एंड-टू-एंड समर्थन।",
                     service_pool_title: "स्विमिंग पूल निस्पंदन",
+                    service_pool_desc: "हमारी पेशेवर निस्पंदन सेवाओं के साथ अपने पूल के पानी को क्रिस्टल क्लियर और सुरक्षित रखें।",
+                    testimonials_title: "हमारे ग्राहक क्या कहते हैं",
+                    testimonial_1_text: "\"हमारे संयंत्र में लगाया गया आरओ प्लांट त्रुटिहीन रूप से चल रहा है। एमके वाटर फिल्ट्रेशन की सेवा शीर्ष स्तर की है।\"",
+                    testimonial_1_author: "- आर. शर्मा, प्लांट मैनेजर",
+                    testimonial_1_company: "फार्मा प्रा. लिमिटेड",
+                    testimonial_2_text: "\"उनके ईटीपी समाधान ने हमें सभी अनुपालन मानकों को पूरा करने में मदद की है। औद्योगिक अपशिष्ट जल उपचार के लिए अत्यधिक अनुशंसित।\"",
+                    testimonial_2_author: "- ए. खान, फैक्ट्री हेड",
+                    testimonial_2_company: "विनिर्माण कंपनी",
+                    testimonial_3_text: "\"हमारे मेहमान लगातार पानी की गुणवत्ता की तारीफ करते हैं। वाटर सॉफ्टनर और पूल निस्पंदन प्रणाली उत्कृष्ट हैं।\"",
+                    testimonial_3_author: "- एस. वर्मा, महाप्रबंधक",
+                    testimonial_3_company: "ग्रैंड होटल भोपाल",
+                    testimonial_4_text: "\"हमारे परिसर के लिए पीने के पानी का समाधान विश्वसनीय है और हमारे सभी छात्रों के लिए सुरक्षित पानी प्रदान करता है। शानदार सेवा!\"",
+                    testimonial_4_author: "- डॉ. एन. गुप्ता, प्राचार्य",
+                    testimonial_4_company: "भोपाल इंजीनियरिंग कॉलेज",
+                    testimonial_5_text: "\"एमके वाटर फिल्ट्रेशन हमारे मॉल की पूरी जल प्रणाली का प्रबंधन करता है। उनकी टीम पेशेवर है और हमेशा उपलब्ध रहती है।\"",
+                    testimonial_5_author: "- पी. सिंह, संचालन प्रबंधक",
+                    testimonial_5_company: "सिटी सेंटर मॉल",
+                    testimonial_6_text: "\"हमारे उत्पादों के लिए पानी की गुणवत्ता महत्वपूर्ण है। एमके वाटर के आरओ और यूवी सिस्टम हमारी जरूरतों के लिए एकदम सही हैं।\"",
+                    testimonial_6_author: "- एम. जैन, मालिक",
+                    testimonial_6_company: "फ्रेश जूस और पेय पदार्थ",
+                    testimonial_7_text: "\"जब से उन्होंने रखरखाव संभाला है, हमारी सोसाइटी का एसटीपी कुशलता से काम कर रहा है। बहुत संतुष्ट।\"",
+                    testimonial_7_author: "- वी. पटेल, सोसाइटी सचिव",
+                    testimonial_7_company: "ग्रीन वैली अपार्टमेंट्स",
                     cta_button_catalogue: "पूरी उत्पाद सूची देखें",
                     cta_title: "क्या आप अपनी जल उपचार आवश्यकताओं पर चर्चा करने के लिए तैयार हैं?",
                     cta_subtitle: "हमारे विशेषज्ञ आपको सही समाधान खोजने में मदद करने के लिए यहां हैं।",
@@ -480,6 +781,7 @@
                     contact_info_title: "संपर्क जानकारी",
                     contact_phone_title: "कॉल और व्हाट्सएप", contact_email_title: "हमें ईमेल करें", contact_address_title: "हमारा पता",
                     contact_address_content: "म.नं.126, एच सेक्टर, राजहर्ष कॉलोनी, कोलार रोड, भोपाल, मध्य प्रदेश।",
+                    contact_map_link: "मानचित्र स्थान खोलें",
                     contact_form_title: "हमें एक संदेश भेजें",
                     form_name: "नाम", form_phone: "फ़ोन नंबर", form_email: "ईमेल", form_message: "संदेश", form_submit: "पूछताछ भेजें"
                 }
