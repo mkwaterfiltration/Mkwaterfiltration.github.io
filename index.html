@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://github.com/mkwaterfiltration/Mkwaterfiltration.github.io/blob/27928f775d74d44787eaf6e8ca3887657175ee90/images/logo.png?raw=true" type="image/png">
+    <link rel="icon" href="images/logo.png" type="image/png">
     <title>M K WATER FILTRATION - Pure Water Solutions in Central India</title>
     <meta name="description" content="Leading service provider for STP, ETP, WTP, RO plants, and all water treatment solutions in Bhopal, Madhya Pradesh.">
     
@@ -38,21 +38,23 @@
             color: #55C3C2;
             font-weight: 600;
         }
-        * {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
         .ribbon-container {
             overflow: hidden;
             width: 100%;
+            -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+            mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
         }
         .testimonial-ribbon {
             display: flex;
-            width: 200%; 
-            animation: scroll-testimonials 40s linear infinite;
+            width: calc(2 * 7 * 350px); 
+            animation: scroll-testimonials 60s linear infinite;
+        }
+        .ribbon-container:hover .testimonial-ribbon, .ribbon-container:hover .gallery-ribbon {
+            animation-play-state: paused;
         }
         .testimonial-card {
             flex-shrink: 0;
-            width: calc(100% / 7);
+            width: 350px;
         }
         @keyframes scroll-testimonials {
             0% { transform: translateX(0); }
@@ -60,16 +62,25 @@
         }
         .gallery-ribbon {
             display: flex;
-            width: calc(20 * 320px); /* 20 images * width of each image card */
-            animation: scroll-gallery 60s linear infinite;
+            width: calc(2 * 20 * 320px); /* 2 sets * 20 images * 320px card width */
+            animation: scroll-gallery 80s linear infinite;
         }
         .gallery-card {
             flex-shrink: 0;
-            width: 320px; /* Fixed width for each image card */
+            width: 300px; /* Image width */
+            margin: 0 10px; /* Spacing */
         }
         @keyframes scroll-gallery {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-20 * 320px)); } /* Scroll one full set of images */
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        /* Scoped transitions for better performance */
+        .nav-link, .btn, .fab, a, button {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
         }
     </style>
 </head>
@@ -86,12 +97,12 @@
             
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="nav-link hover:text-brand-primary" data-lang-key="nav_home">Home</a>
-                <a href="#about" class="nav-link hover:text-brand-primary" data-lang-key="nav_about">About</a>
-                <a href="#industries" class="nav-link hover:text-brand-primary" data-lang-key="nav_industries">Industries</a>
-                <a href="#products" class="nav-link hover:text-brand-primary" data-lang-key="nav_products">Products</a>
-                <a href="#services" class="nav-link hover:text-brand-primary" data-lang-key="nav_services">Services</a>
-                <a href="#contact" class="nav-link hover:text-brand-primary" data-lang-key="nav_contact">Contact</a>
+                <a href="#home" class="nav-link hover:text-brand-primary font-medium" data-lang-key="nav_home">Home</a>
+                <a href="#about" class="nav-link hover:text-brand-primary font-medium" data-lang-key="nav_about">About</a>
+                <a href="#industries" class="nav-link hover:text-brand-primary font-medium" data-lang-key="nav_industries">Industries</a>
+                <a href="#products" class="nav-link hover:text-brand-primary font-medium" data-lang-key="nav_products">Products</a>
+                <a href="#services" class="nav-link hover:text-brand-primary font-medium" data-lang-key="nav_services">Services</a>
+                <a href="#contact" class="nav-link hover:text-brand-primary font-medium" data-lang-key="nav_contact">Contact</a>
             </nav>
 
             <!-- Language Toggle -->
@@ -104,7 +115,7 @@
 
             <!-- Mobile Menu Button -->
             <div class="md:hidden">
-                <button id="mobile-menu-button" class="p-2 rounded-md">
+                <button id="mobile-menu-button" class="p-2 rounded-md" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
@@ -144,7 +155,7 @@
                     We are a leading service provider for STP, ETP, WTP, RO plants, DM plants, Water Softeners, Water Coolers, Water Chillers, Flow Meters, and provide all water treatment sales and services.
                 </p>
                 <div class="mt-8">
-                    <a href="https://drive.google.com/drive/folders/1WgAR7zX4Wqpz9_TxhjIKfwNT3j75njas" target="_blank" class="bg-brand-secondary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 transition-colors" data-lang-key="home_download_btn">Download Catalogue</a>
+                    <a href="https://drive.google.com/drive/folders/1WgAR7zX4Wqpz9_TxhjIKfwNT3j75njas" target="_blank" rel="noopener noreferrer" class="btn bg-brand-secondary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90" data-lang-key="home_download_btn">Download Catalogue</a>
                 </div>
             </div>
         </section>
@@ -345,19 +356,75 @@
         <section class="bg-brand-primary text-white">
             <div class="container mx-auto px-6 py-16 text-center">
                 <h2 class="text-3xl font-bold mb-4" data-lang-key="cta_title">Ready to Discuss Your Water Treatment Needs?</h2>
-                <p class="text-lg mb-8" data-lang-key="cta_subtitle">Our experts are here to help you find the perfect solution.</p>
-                <a href="#contact" class="bg-white text-brand-primary font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-200 transition-colors" data-lang-key="cta_button">Get a Free Consultation</a>
+                <p class="text-lg mb-8 max-w-2xl mx-auto" data-lang-key="cta_subtitle">Our experts are here to help you find the perfect solution.</p>
+                <a href="#contact" class="btn bg-white text-brand-primary font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-200" data-lang-key="cta_button">Get a Free Consultation</a>
             </div>
         </section>
 
-        <!-- ===== TESTIMONIALS SECTION (NEW) ===== -->
-        <section id="testimonials" class="py-16 md:py-24">
+        <!-- ===== OUR WORK GALLERY SECTION (NEW) ===== -->
+        <section id="gallery" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold" data-lang-key="gallery_title">Our Work</h2>
+                    <p class="mt-4 text-lg" data-lang-key="gallery_subtitle">A glimpse into our projects and installations.</p>
+                </div>
+            </div>
+            <div class="ribbon-container">
+                <div class="gallery-ribbon">
+                    <!-- Image Set 1 -->
+                    <div class="gallery-card"><img src="images/1.JPG" alt="Water treatment plant installation" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/2.JPG" alt="Industrial RO system" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/3.JPG" alt="Commercial water purifier" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/4.JPEG" alt="ETP plant" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/5.JPG" alt="Water softener unit" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/6.JPG" alt="Water chiller plant" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/7.JPG" alt="Water filtration system" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/8.JPG" alt="STP plant installation" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/9.JPG" alt="Water treatment panel" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/10.JPG" alt="RO plant maintenance" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/11.JPG" alt="Water purification project" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/12.JPG" alt="Filtration vessels" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/13.JPG" alt="Water treatment equipment" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/14.JPG" alt="Industrial water solutions" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/15.WEBP" alt="Water ATM machine" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/16.JPEG" alt="Water bottling plant" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/17.JPEG" alt="Swimming pool filtration system" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/18.JPEG" alt="DM Plant" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/19.JPG" alt="Sand and carbon filters" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/20.JPG" alt="Project site work" loading="lazy" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <!-- Image Set 2 (Duplicate for seamless loop) -->
+                    <div class="gallery-card"><img src="images/1.JPG" alt="Water treatment plant installation" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/2.JPG" alt="Industrial RO system" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/3.JPG" alt="Commercial water purifier" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/4.JPEG" alt="ETP plant" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/5.JPG" alt="Water softener unit" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/6.JPG" alt="Water chiller plant" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/7.JPG" alt="Water filtration system" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/8.JPG" alt="STP plant installation" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/9.JPG" alt="Water treatment panel" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/10.JPG" alt="RO plant maintenance" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/11.JPG" alt="Water purification project" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/12.JPG" alt="Filtration vessels" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/13.JPG" alt="Water treatment equipment" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/14.JPG" alt="Industrial water solutions" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/15.WEBP" alt="Water ATM machine" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/16.JPEG" alt="Water bottling plant" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/17.JPEG" alt="Swimming pool filtration system" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/18.JPEG" alt="DM Plant" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/19.JPG" alt="Sand and carbon filters" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                    <div class="gallery-card"><img src="images/20.JPG" alt="Project site work" loading="lazy" aria-hidden="true" class="h-48 w-full object-cover rounded-lg shadow-md"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS SECTION ===== -->
+        <section id="testimonials" class="py-16 md:py-24 bg-brand-light-bg">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold" data-lang-key="testimonials_title">What Our Clients Say</h2>
                 </div>
             </div>
-            <div class="testimonial-ribbon-container">
+            <div class="ribbon-container">
                 <div class="testimonial-ribbon">
                     <!-- Testimonials Set 1 -->
                     <div class="testimonial-card p-4">
@@ -642,6 +709,8 @@
                     service_pool_title: "Swimming Pool Filtration",
                     service_pool_desc: "Keep your pool water crystal clear and safe with our professional filtration services.",
                     testimonials_title: "What Our Clients Say",
+                    gallery_title: "Our Work",
+                    gallery_subtitle: "A glimpse into our projects and installations.",
                     testimonial_1_text: "\"The RO plant installed at our facility has been running flawlessly. MK Water Filtration's service is top-notch.\"",
                     testimonial_1_author: "- R. Sharma, Plant Manager",
                     testimonial_1_company: "Pharma Pvt. Ltd.",
@@ -759,6 +828,8 @@
                     service_pool_title: "स्विमिंग पूल निस्पंदन",
                     service_pool_desc: "हमारी पेशेवर निस्पंदन सेवाओं के साथ अपने पूल के पानी को क्रिस्टल क्लियर और सुरक्षित रखें।",
                     testimonials_title: "हमारे ग्राहक क्या कहते हैं",
+                    gallery_title: "हमारे काम",
+                    gallery_subtitle: "हमारी परियोजनाओं और प्रतिष्ठानों की एक झलक।",
                     testimonial_1_text: "\"हमारे संयंत्र में लगाया गया आरओ प्लांट त्रुटिहीन रूप से चल रहा है। एमके वाटर फिल्ट्रेशन की सेवा शीर्ष स्तर की है।\"",
                     testimonial_1_author: "- आर. शर्मा, प्लांट मैनेजर",
                     testimonial_1_company: "फार्मा प्रा. लिमिटेड",
@@ -820,17 +891,19 @@
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+                const isExpanded = mobileMenu.classList.toggle('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
             });
             mobileMenu.addEventListener('click', (e) => {
                 if(e.target.tagName === 'A') {
                     mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
                 }
             });
 
             // ===== ACTIVE NAV LINK ON SCROLL =====
             const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('header nav a');
+            const navLinks = document.querySelectorAll('header nav a, #mobile-menu a');
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
